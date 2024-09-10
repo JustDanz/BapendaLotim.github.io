@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>News Directory</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+    <style>
+        /* Custom Styling */
+        
+        .news-section {
+            padding: 40px 20px;
+        }
+        
+        .featured-news {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .featured-news:hover {
+            transform: translateY(-10px);
+        }
+        
+        .featured-news-title {
+            background-color: #1e40af;
+            /* Tailwind Indigo-900 */
+            color: white;
+            padding: 1rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .recent-popular .card {
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .recent-popular .card-header {
+            background-color: #ef4444;
+            /* Tailwind Red-500 */
+            color: white;
+            font-weight: 700;
+            padding: 0.75rem 1rem;
+        }
+        
+        .popular-card-header {
+            background-color: #facc15;
+            /* Tailwind Yellow-400 */
+        }
+        
+        .list-group-item {
+            padding: 0.75rem 1rem;
+        }
+        /* Banner Styling */
+        
+        .banner {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            position: relative;
+        }
+        
+        .banner img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 0.75rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            top: -500px;
+            right: 100px;
+        }
+        /* Back to Directory Button */
+        
+        .back-button {
+            margin-bottom: 1rem;
+            /* Margin for spacing */
+            width: 100%;
+            /* Full width on smaller screens */
+        }
+        /* Animation */
+        
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+        
+        @keyframes fadeIn {
+            100% {
+                opacity: 1;
+            }
+        }
+        /* News List Item Enhancements */
+        
+        .list-group-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .list-group-item .item-title {
+            font-weight: 500;
+        }
+        
+        .list-group-item .item-date {
+            font-size: 0.875rem;
+            color: #6b7280;
+            /* Tailwind Gray-500 */
+        }
+        
+        @media (max-width: 576px) {
+            .featured-news-title {
+                font-size: 1rem;
+                /* Adjust title size for smaller screens */
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <div class="container news-section">
+        <!-- Main News Section -->
+        <div class="row main-news">
+            <!-- Featured News -->
+            <div class="col-lg-8 featured-news col-md-12" data-aos="fade-up">
+                <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="images/94WhatsApp Image 2024-02-21 at 13.04.39.jpeg" class="d-block w-100" alt="News 1">
+                            <div class="carousel-caption news-carousel-caption">
+                                <h5>Featured News Title 1</h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/17WhatsApp Image 2024-02-19 at 15.03.44.jpeg" class="d-block w-100" alt="News 2">
+                            <div class="carousel-caption news-carousel-caption">
+                                <h5>Featured News Title 2</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="featured-news-title">Sosialisasi Pengelolaan Arsip Dinamis</div>
+            </div>
+
+            <!-- Recent & Popular Section -->
+            <div class="col-lg-4 recent-popular col-md-12">
+                <!-- Recent -->
+                <div class="card mb-4" data-aos="fade-up">
+                    <div class="card-header">Terbaru</div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <span class="item-title">Pembahasan Rancangan Perbup Tentang Tata Cara Pemungutan Retribusi Daerah</span>
+                            <span class="item-date">Sept 4, 2024</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="item-title">Rapat Koordinasi Percepatan Elektronifikasi Pajak Daerah Dan Retribusi Daerah</span>
+                            <span class="item-date">Sept 3, 2024</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="item-title">Sosialisasi Pengelolaan Arsip Dinamis</span>
+                            <span class="item-date">Sept 2, 2024</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Popular -->
+                <div class="card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="card-header popular-card-header">Populer</div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <span class="item-title">Pembahasan Rancangan Perbup Tentang Tata Cara Pemungutan Retribusi Daerah</span>
+                            <span class="item-date">Sept 4, 2024</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="item-title">Rapat Koordinasi Percepatan Elektronifikasi Pajak Daerah Dan Retribusi Daerah</span>
+                            <span class="item-date">Sept 3, 2024</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="item-title">Sosialisasi Pengelolaan Arsip Dinamis</span>
+                            <span class="item-date">Sept 2, 2024</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Banner Section -->
+        <div class="row mt-4">
+            <div class="col-12 text-end mb-3">
+                <a href="https://bapenda-lotim-github-io.vercel.app/" class="btn btn-primary back-button">Back to Directory</a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 ml-auto banner" data-aos="fade-left">
+                <img src="images/438CFD POSTER continue web.jpg" alt="Banner">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
